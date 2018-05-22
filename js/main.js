@@ -110,12 +110,22 @@ $(document).ready(function () {
         $('.close-side-panel').fadeIn(2500);
 
     });
-    // $(window).scroll(function () {
-    //     if ($(document).scrollTop() > 1) {
-    //         $('header').addClass('sticky-header');
-    //     } else {
-    //         $('header').removeClass('sticky-header');
-    //     }
-    // });
+    //*****Cookies******/
+    $(function () {
+        // Проверяем запись в куках о посещении
+        // Если запись есть - ничего не делаем
+        if (!$.cookie('hideModal')) {
+            var delay_popup = 2000;
+            setTimeout("document.getElementById('cookies').style.display='flex'", delay_popup);
+        }
+        $.cookie('hideModal', true, {
+            expires: 7,
+            path: '/'
+        });
+    });
+    $('.closemodal').click(function () {
+        $('.modal , #cookies').fadeOut(300)
+    });
+
 
 });

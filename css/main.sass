@@ -39,7 +39,7 @@ body
   font-size: 16px
   color: #134757
   overflow: hidden
-  //overflow-x: hidden
+//overflow-x: hidden
 
 main
   position: relative
@@ -47,7 +47,7 @@ main
 
 section
   width: 100%
-  //margin-left: 10%
+//margin-left: 10%
 
 .bg-scroll
   min-height: 100%
@@ -400,7 +400,6 @@ section
   transform: translate(-50%, -50%) rotate(0deg) !important
   -ms-transform: translate(-50%, -50%) rotate(0deg) !important
 
-
 #map
   position: relative
   margin-top: 70px
@@ -409,6 +408,67 @@ section
   border: 1px solid gainsboro
 /****************************************/
 /************Rotate close button********/
+///********** Modal and cookies close button*************************************/
+.close, .closemodal
+  display: block
+  z-index: 35
+  position: absolute
+  right: 1%
+  top: 3%
+  width: 36px
+  height: 36px
+  opacity: .7
+  transition: transform .5s ease-in-out
+
+.closemodal
+  top: 5%
+
+.close
+  position: fixed
+  right: 15px
+  top: 15px
+  display: none
+
+.close:before, .closemodal:before
+  content: ""
+  position: absolute
+  display: block
+  margin: auto
+  left: 0
+  right: 0
+  top: 0
+  bottom: 0
+  width: 28px
+  height: 0
+  border-top: 1px solid #ffffff
+  transform: rotate(45deg)
+  transform-origin: center
+
+.close:after, .closemodal:after
+  content: ""
+  position: absolute
+  display: block
+  margin: auto
+  left: 0
+  right: 0
+  top: 0
+  bottom: 0
+  width: 28px
+  height: 0
+  border-top: 1px solid #ffffff
+  transform: rotate(-45deg)
+  transform-origin: center
+
+.close
+  &:after, &:before
+    border-top: 2px solid red
+
+.close:hover, .closemodal:hover
+  transform: rotate(180deg)
+  opacity: .8
+  /*transform: scale(1.4)*/
+  cursor: pointer
+
 /****************************************/
 
 $lineWidth: 32
@@ -734,6 +794,24 @@ $variable-scrollingTime: 1350ms
         line-height: 3em
         padding: 0 2em
         width: 100%
+/********** Cookies *************************************/
+#cookies
+  position: fixed
+  top: 2%
+  left: 25%
+  width: 50%
+  //height: 15%
+  padding: 45px
+  text-align: center
+  line-height: 1.6
+  background: rgba(116, 191, 100, 95)
+  color: #285128
+  display: none
+  align-items: center
+  justify-content: center
+  overflow: hidden
+  transition: 1s
+  z-index: 35
 /* Smartphones (вертикальная и горизонтальная ориентация) ----------- */
 @media only screen and (min-width: 320px) and (max-width: 767px)
   .slogan
