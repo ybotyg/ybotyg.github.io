@@ -1,0 +1,94 @@
+/**********Additional style*************************************/
+*, *::after, *::before
+  box-sizing: border-box
+
+/**********SCROLL OFF*************************************/
+::-webkit-scrollbar
+  width: 0
+  background: rgba(255, 255, 255, 0.0)
+
+html
+  height: 100%
+  body
+    font-family: Roboto,Helvetica,Arial,sans-serif
+    font-size: 2.5em
+    text-align: center
+    height: 100%
+
+    h2
+      color: #00a9ec
+      //color: red
+      text-transform: uppercase
+      font-weight: 300
+      text-align: left
+    p
+      font-weight: 300
+      line-height: 2
+      text-align: justify
+      text-indent: 15px
+    header
+      //height: 15%
+      text-align: left
+      background: #1b6d85
+      border-bottom: 3px
+      border-bottom-color: black
+      .logo
+        margin: 20px 50px 35px
+        span
+          color: white
+          &:nth-of-type(1)
+            position: relative
+            font-size: 4em
+            font-weight: 600
+            font-family: 'PT Sans', sans-serif
+            &:after
+              position: absolute
+              top: 120px
+              left: 0
+              content: ''
+              width: 190px
+              height: 5px
+              background: white
+    section
+      position: relative
+      padding: 50px
+      height: 100%
+      overflow: hidden
+      &:nth-of-type(2)
+        background: #f5f5f5
+      .hr
+        position: absolute
+        top: 0
+        left: 15%
+        height: 100%
+        width: 2px
+        background: #00a9ec
+        z-index: 10
+        &:before
+          position: absolute
+          padding: 15px 0 15px 0
+          content: 'IPC'
+          top: 50px
+          left: -35px
+          width: 70px
+          height: 70px
+          border-radius: 70px
+          background: #00a9ec
+          color: white
+          font-size: 1.2em
+          box-shadow: 0px 0px 12px #535353
+      img
+        position: absolute
+        top: -200px
+        right: -270px
+        border-radius: 100%
+        width: 130%
+        opacity: 0.8
+
+    footer
+      height: 30%
+      background: #1b6d85
+
+
+
+
