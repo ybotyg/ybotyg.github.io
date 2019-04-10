@@ -99,9 +99,6 @@ html {
         opacity: 0.5; }
         html body section img:hover {
           opacity: 1; }
-    html body footer {
-      height: 30%;
-      background: #1b6d85; }
 
 /* Smartphones (╨▓╨╡╤А╤В╨╕╨║╨░╨╗╤М╨╜╨░╤П ╨╕ ╨│╨╛╤А╨╕╨╖╨╛╨╜╤В╨░╨╗╤М╨╜╨░╤П ╨╛╤А╨╕╨╡╨╜╤В╨░╤Ж╨╕╤П) ----------- */
 @media only screen and (max-width: 480px) {
