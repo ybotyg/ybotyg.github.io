@@ -11,17 +11,20 @@ html {
   height: 100%; }
   html body {
     font-family: Roboto, Helvetica, Arial, sans-serif;
-    font-size: 1.7em;
+    font-size: 1.6em;
     text-align: center;
     height: 100%; }
-    html body h2 {
+    html body ul {
+      list-style: none;
+      text-align: left; }
+    html body h2, html body h3 {
       color: #00a9ec;
       text-transform: uppercase;
       font-weight: 300;
       text-align: left; }
     html body p {
       font-weight: 300;
-      line-height: 1.8;
+      line-height: 1.7;
       text-align: justify;
       text-indent: 15px; }
     html body header {
@@ -82,7 +85,7 @@ html {
           color: white;
           font-size: 1.7em;
           box-shadow: 0px 0px 12px #535353; }
-      html body section .fas {
+      html body section i {
         color: #1b6d85; }
       html body section img {
         position: absolute;
