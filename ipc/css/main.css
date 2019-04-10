@@ -11,7 +11,7 @@ html {
   height: 100%; }
   html body {
     font-family: Roboto, Helvetica, Arial, sans-serif;
-    font-size: 2.5em;
+    font-size: 1.7em;
     text-align: center;
     height: 100%; }
     html body h2 {
@@ -21,7 +21,7 @@ html {
       text-align: left; }
     html body p {
       font-weight: 300;
-      line-height: 2;
+      line-height: 1.8;
       text-align: justify;
       text-indent: 15px; }
     html body header {
@@ -29,8 +29,16 @@ html {
       background: #1b6d85;
       border-bottom: 3px;
       border-bottom-color: black; }
+      html body header .adress {
+        padding: 25px;
+        color: white;
+        list-style: none;
+        text-align: right;
+        line-height: 1.3;
+        font-family: "PT Sans", sans-serif; }
       html body header .logo {
-        margin: 20px 50px 35px; }
+        margin: 20px 50px 35px;
+        line-height: 1.2; }
         html body header .logo span {
           color: white; }
           html body header .logo span:nth-of-type(1) {
@@ -40,7 +48,7 @@ html {
             font-family: "PT Sans", sans-serif; }
             html body header .logo span:nth-of-type(1):after {
               position: absolute;
-              top: 120px;
+              top: 110px;
               left: 0;
               content: "";
               width: 190px;
@@ -72,12 +80,14 @@ html {
           border-radius: 70px;
           background: #00a9ec;
           color: white;
-          font-size: 1.2em;
+          font-size: 1.7em;
           box-shadow: 0px 0px 12px #535353; }
+      html body section .fas {
+        color: #1b6d85; }
       html body section img {
         position: absolute;
-        top: -200px;
-        right: -270px;
+        top: -230px;
+        right: -240px;
         border-radius: 100%;
         width: 130%;
         opacity: 0.8; }
