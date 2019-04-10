@@ -28,7 +28,7 @@ html
       text-align: justify
       &:first-letter
         font-weight: 500
-    header
+    header,footer
       text-align: left
       background: #498AB8
       border-bottom: 3px
@@ -101,7 +101,9 @@ html
         right: -190px
         border-radius: 100%
         width: 100%
-        opacity: 0.9
+        opacity: 0.5
+        &:hover
+          opacity: 1
     footer
       height: 30%
       background: #1b6d85
@@ -111,6 +113,7 @@ html
     .line
       display: none
     img
+      position: relative !important
       border-radius: 0 !important
       top: 0 !important
       right: 0 !important

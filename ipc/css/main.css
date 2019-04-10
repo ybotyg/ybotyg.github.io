@@ -24,28 +24,28 @@ html {
       text-align: justify; }
       html body p:first-letter {
         font-weight: 500; }
-    html body header {
+    html body header, html body footer {
       text-align: left;
       background: #498AB8;
       border-bottom: 3px;
       border-bottom-color: black; }
-      html body header .adress {
+      html body header .adress, html body footer .adress {
         padding: 5px 20px;
         color: white;
         text-align: right;
         line-height: 1.3;
         font-family: "PT Sans", sans-serif; }
-      html body header .logo {
+      html body header .logo, html body footer .logo {
         padding: 5px 20px;
         line-height: 1.3; }
-        html body header .logo span {
+        html body header .logo span, html body footer .logo span {
           color: white; }
-          html body header .logo span:nth-of-type(1) {
+          html body header .logo span:nth-of-type(1), html body footer .logo span:nth-of-type(1) {
             position: relative;
             font-size: 3.7em;
             font-weight: 600;
             font-family: "PT Sans", sans-serif; }
-            html body header .logo span:nth-of-type(1):after {
+            html body header .logo span:nth-of-type(1):after, html body footer .logo span:nth-of-type(1):after {
               position: absolute;
               top: 110px;
               left: 0;
@@ -96,7 +96,9 @@ html {
         right: -190px;
         border-radius: 100%;
         width: 100%;
-        opacity: 0.9; }
+        opacity: 0.5; }
+        html body section img:hover {
+          opacity: 1; }
     html body footer {
       height: 30%;
       background: #1b6d85; }
@@ -107,6 +109,7 @@ html {
     display: none; }
 
   img {
+    position: relative !important;
     border-radius: 0 !important;
     top: 0 !important;
     right: 0 !important; } }
