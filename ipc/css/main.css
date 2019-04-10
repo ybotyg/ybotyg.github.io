@@ -91,7 +91,7 @@ html {
         padding: 0 35px;
         border-radius: 25px; }
       html body section img {
-        position: relative;
+        position: absolute;
         top: -210px;
         right: -190px;
         border-radius: 100%;
