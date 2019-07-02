@@ -1,56 +1,565 @@
 @charset "UTF-8";
-/**********Additional style************************************ */
-*, *::after, *::before {
-  box-sizing: border-box; }
-
+/* ==========================================================================
+ * Base styles: opinionated defaults
+ * ========================================================================== */
 html {
-  height: 100%; }
-  html body {
-    font-family: "Montserrat", sans-serif;
-    height: 100%; }
-    html body main {
-      height: 100%; }
-    html body .bg-fixed {
-      min-height: 60%;
-      background: fixed center center no-repeat;
-      background-size: cover;
-      overflow: hidden;
-      text-align: center; }
-      html body .bg-fixed:nth-of-type(1) {
-        background-image: url("../img/vysotka-2.jpg"); }
-      html body .bg-fixed:nth-of-type(3) {
-        background-image: url("../img/warshawa-1.jpg"); }
-    html body .bg-scrolling {
-      min-height: 100%;
-      background: #f5f5f5;
-      padding: 100px;
-      text-align: center; }
-      html body .bg-scrolling .adv-block-possibility {
-        margin: 50px 0;
-        text-align: center;
-        padding: 15px 10px;
-        background: white;
-        line-height: 1.8;
-        color: #208ae0;
-        box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1); }
-        html body .bg-scrolling .adv-block-possibility:hover {
-          box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.3); }
-      html body .bg-scrolling .adv-block-garanty {
-        margin: 50px 0;
-        padding: 0;
-        list-style-type: none;
-        box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.3); }
-        html body .bg-scrolling .adv-block-garanty:hover {
-          box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.5); }
-        html body .bg-scrolling .adv-block-garanty li {
-          padding: 15px; }
-          html body .bg-scrolling .adv-block-garanty li:nth-of-type(1) {
-            padding: 35px;
-            background: #208ae0;
-            color: white; }
+  font-size: 1.1em;
+  line-height: 1.4; }
 
-/* Smartphones (╨▓╨╡╤А╤В╨╕╨║╨░╨╗╤М╨╜╨░╤П ╨╕ ╨│╨╛╤А╨╕╨╖╨╛╨╜╤В╨░╨╗╤М╨╜╨░╤П ╨╛╤А╨╕╨╡╨╜╤В╨░╤Ж╨╕╤П) ----------- */
+/* Remove text-shadow in selection highlight:
+ * https://twitter.com/miketaylr/status/12228805301
+ *
+ * Vendor-prefixed and regular ::selection selectors cannot be combined:
+ * https://stackoverflow.com/a/16982510/7133471
+ *
+ * Customize the background color to match your design. */
+::-moz-selection, ::selection {
+  background: #b3d4fc;
+  text-shadow: none; }
+
+/* A better looking default horizontal rule */
+hr {
+  display: block;
+  height: 1px;
+  border: 0;
+  border-top: 1px solid #ccc;
+  margin: 1em 0;
+  padding: 0; }
+
+/* Remove the gap between audio, canvas, iframes,
+ * images, videos and the bottom of their containers:
+ * https://github.com/h5bp/html5-boilerplate/issues/440 */
+audio, canvas, iframe, img, svg, video {
+  vertical-align: middle; }
+
+/* Remove default fieldset styles. */
+fieldset {
+  border: 0;
+  margin: 0;
+  padding: 0; }
+
+/* Allow only vertical resizing of textareas. */
+textarea {
+  resize: vertical; }
+
+/* ==========================================================================
+ * Browser Upgrade Prompt
+ * ========================================================================== */
+.browserupgrade {
+  margin: 0.2em 0;
+  background: #ccc;
+  color: #000;
+  padding: 0.2em 0; }
+
+/* ==========================================================================
+ * Author's custom styles
+ * ========================================================================== */
+/* ==========================================================================
+ * Helper classes
+ * ========================================================================== */
+/* Hide visually and from screen readers */
+.hidden {
+  display: none !important; }
+
+/** Hide only visually, but have it available for screen readers:
+ ** https://snook.ca/archives/html_and_css/hiding-content-for-accessibility
+ **
+ ** 1. For long content, line feeds are not interpreted as spaces and small width
+ **    causes content to wrap 1 word per line:
+ **    https://medium.com/@jessebeach/beware-smushed-off-screen-accessible-text-5952a4c2cbfe */
+.sr-only {
+  border: 0;
+  clip: rect(0, 0, 0, 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+  /* 1 */ }
+  .sr-only.focusable:active, .sr-only.focusable:focus {
+    clip: auto;
+    height: auto;
+    margin: 0;
+    overflow: visible;
+    position: static;
+    white-space: inherit;
+    width: auto; }
+
+/** Extends the .sr-only class to allow the element
+ ** to be focusable when navigated to via the keyboard:
+ ** https://www.drupal.org/node/897638 */
+/** Hide visually and from screen readers, but maintain layout */
+.invisible {
+  visibility: hidden; }
+
+/** Clearfix: contain floats
+ **
+ ** For modern browsers
+ ** 1. The space content is one way to avoid an Opera bug when the
+ **    `contenteditable` attribute is included anywhere else in the document.
+ **    Otherwise it causes space to appear at the top and bottom of elements
+ **    that receive the `clearfix` class.
+ ** 2. The use of `table` rather than `block` is only necessary if using
+ **    `:before` to contain the top-margins of child elements. */
+.clearfix {
+  /* 2 */ }
+  .clearfix:before {
+    content: " ";
+    /* 1 */
+    display: table; }
+  .clearfix:after {
+    content: " ";
+    /* 1 */
+    display: table;
+    /* 2 */
+    clear: both; }
+
+/* ==========================================================================
+ * MAIN STYLE
+ * ========================================================================== */
+body {
+  font-family: "Roboto", sans-serif;
+  color: #4c4c4c; }
+
+header {
+  position: fixed;
+  padding: 12px;
+  top: 0;
+  left: 0;
+  z-index: 200;
+  width: 100%;
+  line-height: 50px;
+  background: #ffffff;
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+  transition: 0.4s; }
+  header .moto-header {
+    border-radius: 15px; }
+  header .phone-header, header .adress-header {
+    position: relative;
+    border-left: black 2px solid;
+    padding-left: 8px;
+    line-height: 1.7; }
+    header .phone-header:before, header .adress-header:before {
+      font-family: FontAwesome;
+      content: "";
+      position: absolute;
+      left: -30px;
+      top: 2px;
+      font-size: 1.6em; }
+    header .phone-header a, header .adress-header a {
+      text-decoration: underline;
+      color: black; }
+  header .adress-header:before {
+    content: ""; }
+  header .adress-header p {
+    margin: 0; }
+
+main {
+  margin-top: 70px; }
+
+section {
+  min-height: 100vh; }
+
+.bg-fixed {
+  position: relative;
+  min-height: 80vh;
+  background: fixed center center no-repeat;
+  background-size: cover;
+  overflow: hidden; }
+  .bg-fixed:nth-of-type(1) {
+    background-image: url("../img/Warsawa-1.jpg"); }
+  .bg-fixed:nth-of-type(3) {
+    background-image: url("../img/Krakov.jpg"); }
+  .bg-fixed:nth-of-type(5) {
+    background-image: url("../img/Warsawa-2.jpg"); }
+
+.slogan {
+  padding: 30px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #ffffff;
+  background: rgba(0, 0, 0, 0.8); }
+  .slogan h1 {
+    margin: 0 0 25px;
+    position: relative; }
+    .slogan h1:after {
+      position: absolute;
+      bottom: -10px;
+      left: 0;
+      content: "";
+      width: 100px;
+      height: 5px;
+      background: yellow;
+      z-index: 205; }
+  .slogan h4 {
+    margin: 0 0 10px; }
+  .slogan img {
+    margin-top: -30px;
+    width: 300%;
+    animation-duration: 1.5s;
+    animation-delay: 2s;
+    animation-iteration-count: infinite; }
+
+.main-slogan, .footer-slogan {
+  margin-top: 35px; }
+  .main-slogan p, .footer-slogan p {
+    margin-top: 15px; }
+
+.form-inline {
+  margin-top: 35px; }
+
+.form-control, .btn {
+  font-size: 1.1em;
+  width: 100% !important;
+  border-radius: 25px;
+  text-align: center;
+  height: 50px; }
+  .form-control::placeholder, .btn::placeholder {
+    font-weight: lighter; }
+
+.btn {
+  background: yellow !important; }
+  .btn:hover {
+    background: rgba(255, 255, 0, 0.8) !important;
+    color: #ffffff;
+    transition: all 0.3s ease-in-out;
+    -webkit-transition: all 0.3s ease-in-out;
+    -moz-transition: all 0.3s ease-in-out; }
+
 .bg-scrolling {
-  padding: 0 !important; }
+  position: relative;
+  background: #fff;
+  text-align: center; }
+  .bg-scrolling .main-section {
+    margin-top: 50px; }
+    .bg-scrolling .main-section p {
+      text-indent: 20px;
+      text-align: justify;
+      line-height: 1.6; }
+  .bg-scrolling img {
+    width: 80px;
+    cursor: pointer; }
+    .bg-scrolling img:hover {
+      animation: shake 1s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
+      transform: translate3d(0, 0, 0);
+      backface-visibility: hidden;
+      perspective: 1000px; }
+  .bg-scrolling .footer-section {
+    margin-top: 100px; }
+@keyframes shake {
+  10%, 90% {
+    transform: translate3d(-1px, 0, 0); }
+  20%, 80% {
+    transform: translate3d(2px, 0, 0); }
+  30%, 50%, 70% {
+    transform: translate3d(-4px, 0, 0); }
+  40%, 60% {
+    transform: translate3d(4px, 0, 0); } }
+  .bg-scrolling span:nth-child(1) {
+    color: #1d5aa2;
+    font-size: 1.8em; }
+  .bg-scrolling span:nth-child(2) {
+    font-size: 1.2em;
+    color: orange; }
+  .bg-scrolling h1, .bg-scrolling h2, .bg-scrolling h3, .bg-scrolling h4 {
+    color: #505050; }
+
+figure.snip {
+  position: relative;
+  overflow: hidden;
+  margin: 20px auto;
+  min-width: 220px;
+  max-width: 310px;
+  width: 100%;
+  color: #333;
+  text-align: left;
+  box-shadow: none !important; }
+  figure.snip img {
+    max-width: 100%;
+    height: 80px;
+    width: 80px;
+    border-radius: 50%;
+    margin-right: 5px;
+    margin-top: 15px;
+    display: block;
+    z-index: 1;
+    position: absolute;
+    right: 50%; }
+  figure.snip blockquote {
+    margin: 0;
+    display: block;
+    border-radius: 8px;
+    position: relative;
+    background-color: #fafafa;
+    padding: 65px 50px 35px 50px;
+    font-size: 1em;
+    font-weight: 500;
+    line-height: 1.6em;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.15); }
+    figure.snip blockquote:before, figure.snip blockquote:after {
+      content: "“";
+      position: absolute;
+      font-size: 50px;
+      opacity: 0.3;
+      font-style: normal; }
+    figure.snip blockquote:before {
+      top: 55px;
+      left: 20px; }
+    figure.snip blockquote:after {
+      content: "”";
+      right: 20px;
+      bottom: 5px; }
+  figure.snip .author {
+    margin: 0;
+    height: 80px;
+    display: block;
+    text-align: left;
+    padding: 0 35px;
+    position: relative;
+    z-index: 1; }
+    figure.snip .author h5, figure.snip .author span {
+      left: 50%;
+      position: absolute;
+      opacity: 0.8;
+      padding: 3px 5px; }
+    figure.snip .author h5 {
+      text-transform: uppercase;
+      bottom: 50%;
+      margin: 0;
+      font-weight: 800;
+      color: #ffffff; }
+    figure.snip .author span {
+      font-size: 0.8em;
+      color: #ffff00;
+      top: 50%;
+      font-weight: 500; }
+
+footer {
+  background: #1d5aa2;
+  padding: 16px 0; }
+  footer ul {
+    list-style: none;
+    color: white;
+    margin: 0; }
+  footer #map {
+    width: 100%;
+    height: 300px;
+    background-color: grey; }
+
+.overlay {
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  display: none;
+  background: rgba(0, 0, 0, 0.7);
+  z-index: 201; }
+  .overlay #callback {
+    z-index: 202;
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 60%;
+    background: #1e7dc9;
+    padding: 1% 2%;
+    text-align: center;
+    border-radius: 10px;
+    color: #ffffff; }
+    .overlay #callback h3 {
+      margin: 0; }
+    .overlay #callback h4 {
+      margin-bottom: 50px;
+      color: white; }
+  .overlay .closemodal {
+    display: block;
+    z-index: 35;
+    position: absolute;
+    right: 1%;
+    top: 3%;
+    width: 36px;
+    height: 36px;
+    opacity: 0.7;
+    transition: transform 0.5s ease-in-out; }
+    .overlay .closemodal::after {
+      content: "";
+      position: absolute;
+      display: block;
+      margin: auto;
+      left: 0;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      width: 28px;
+      height: 0;
+      border-top: 1px solid #ffffff;
+      transform: rotate(-45deg);
+      transform-origin: center; }
+    .overlay .closemodal::before {
+      content: "";
+      position: absolute;
+      display: block;
+      margin: auto;
+      left: 0;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      width: 28px;
+      height: 0;
+      border-top: 1px solid #ffffff;
+      transform: rotate(45deg);
+      transform-origin: center; }
+    .overlay .closemodal:hover {
+      transform: rotate(180deg);
+      opacity: 0.8;
+      /*transform: scale(1.4) */
+      cursor: pointer; }
+
+#call-btn {
+  position: fixed;
+  bottom: 4%;
+  right: 3%;
+  transform: translate(-50%, -50%);
+  background: #4fbaea;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  color: #fff;
+  text-align: center;
+  line-height: 50px;
+  font-size: 30px;
+  cursor: pointer; }
+  #call-btn:before {
+    content: " ";
+    display: block;
+    position: absolute;
+    border: 1px solid #4fbaea;
+    left: -20px;
+    right: -20px;
+    top: -20px;
+    bottom: -20px;
+    border-radius: 50%;
+    animation: animate 1.5s linear infinite;
+    opacity: 0;
+    backface-visibility: hidden; }
+  #call-btn:after {
+    content: " ";
+    display: block;
+    position: absolute;
+    border: 1px solid #4fbaea;
+    left: -20px;
+    right: -20px;
+    top: -20px;
+    bottom: -20px;
+    border-radius: 50%;
+    animation: animate 1.5s linear infinite;
+    opacity: 0;
+    backface-visibility: hidden;
+    animation-delay: 0.5s; }
+@keyframes animate {
+  0% {
+    transform: scale(0.5);
+    opacity: 0; }
+  50% {
+    opacity: 1; }
+  100% {
+    transform: scale(1.2);
+    opacity: 0; } }
+/* ==========================================================================
+ * EXAMPLE Media Queries for Responsive Design.
+ * These examples override the primary ('mobile first') styles.
+ * Modify as content requires.
+ * ========================================================================== */
+@media (max-width: 767px) {
+  header {
+    font-size: 0.9em; }
+    header .phone-header, header .adress-header {
+      font-size: 1.2em; }
+
+  .bg-fixed {
+    height: 130vh; }
+    .bg-fixed:last-of-type {
+      height: 250vh; }
+
+  .slogan {
+    width: 98%; }
+    .slogan img {
+      width: 110%;
+      margin-top: 0; }
+
+  .overlay #callback {
+    width: 90%;
+    padding: 25px 15px; }
+
+  .form-control, .btn {
+    margin-top: 20px; }
+
+  #call-btn {
+    bottom: 0;
+    right: 0; } }
+/* Style adjustments for high resolution devices */
+/* ==========================================================================
+ * Print styles.
+ * Inlined to avoid the additional HTTP request:
+ * https://www.phpied.com/delay-loading-your-print-css/
+ * ========================================================================== */
+@media print {
+  * {
+    background: transparent !important;
+    color: #000 !important;
+    /* Black prints faster */
+    -webkit-box-shadow: none !important;
+    box-shadow: none !important;
+    text-shadow: none !important; }
+    *:before, *:after {
+      background: transparent !important;
+      color: #000 !important;
+      /* Black prints faster */
+      -webkit-box-shadow: none !important;
+      box-shadow: none !important;
+      text-shadow: none !important; }
+
+  a {
+    text-decoration: underline; }
+    a:visited {
+      text-decoration: underline; }
+    a[href]:after {
+      content: " (" attr(href) ")"; }
+
+  abbr[title]:after {
+    content: " (" attr(title) ")"; }
+
+  /* * Don't show links that are fragment identifiers,
+   * * or use the `javascript:` pseudo protocol */
+  a[href^="#"]:after, a[href^="javascript:"]:after {
+    content: ""; }
+
+  pre {
+    white-space: pre-wrap !important;
+    border: 1px solid #999;
+    page-break-inside: avoid; }
+
+  blockquote {
+    border: 1px solid #999;
+    page-break-inside: avoid; }
+
+  /* * Printing Tables:
+   * * https://web.archive.org/web/20180815150934/http://css-discuss.incutio.com/wiki/Printing_Tables */
+  thead {
+    display: table-header-group; }
+
+  tr, img {
+    page-break-inside: avoid; }
+
+  p, h2, h3 {
+    orphans: 3;
+    widows: 3; }
+
+  h2, h3 {
+    page-break-after: avoid; } }
 
 /*# sourceMappingURL=main.css.map */
